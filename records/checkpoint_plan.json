@@ -1,0 +1,169 @@
+{
+  "adapters": {
+    "object_state": {
+      "checkpoint_id": "1DFezOAD0oD1BblsXVxqDsl8fj0qzB82i",
+      "checkpoint_provider": "google_drive",
+      "repository": "https://github.com/NVlabs/FoundationPose",
+      "repository_commit": "a1b694b83e633c2cb6115b9063d940a687759392",
+      "required_assets": [
+        "2023-10-28-18-33-37/config.yml",
+        "2023-10-28-18-33-37/model_best.pth",
+        "2024-01-11-20-02-45/config.yml",
+        "2024-01-11-20-02-45/model_best.pth"
+      ],
+      "resolved_revision": "google_drive_folder:1DFezOAD0oD1BblsXVxqDsl8fj0qzB82i"
+    },
+    "raw_hand": {
+      "assets": [
+        {
+          "bytes": 53582271,
+          "expected_sha256": "5ef3df44e42d2db52d4ffe91f83a22ce9925e2acc9abebf453f2c5d22e380033",
+          "path": "external/detector.pt"
+        },
+        {
+          "bytes": 3267481572,
+          "expected_sha256": "4d1cc43853c190d6f2c10d9b6295c73109f0faf9ef41ac817a2b31d94b4823f2",
+          "path": "hawor/checkpoints/hawor.ckpt"
+        },
+        {
+          "bytes": 2743,
+          "path": "hawor/model_config.yaml"
+        }
+      ],
+      "checkpoint_id": "ThunderVVV/HaWoR",
+      "checkpoint_provider": "huggingface",
+      "excluded_upstream_assets": [
+        "external/droid.pth",
+        "external/metric_depth_vit_large_800k.pth",
+        "hawor/checkpoints/infiller.pt"
+      ],
+      "reason": "M3 uses raw observed camera-space hand output only; SLAM, metric-depth scaling and infiller are prohibited",
+      "repository": "https://github.com/ThunderVVV/HaWoR",
+      "repository_commit": "66c7d4108d58a716deccd192cb7645170cdc7bd7",
+      "resolved_revision": "da6335f47f9806308992d5ae1002a4cc5f7252c2"
+    },
+    "segmentation": {
+      "assets": [
+        {
+          "bytes": 3650,
+          "path": "sam2.1_hiera_b+.yaml"
+        },
+        {
+          "bytes": 323606802,
+          "expected_sha256": "a2345aede8715ab1d5d31b4a509fb160c5a4af1970f199d9054ccfb746c004c5",
+          "path": "sam2.1_hiera_base_plus.pt"
+        }
+      ],
+      "checkpoint_id": "facebook/sam2.1-hiera-base-plus",
+      "checkpoint_provider": "huggingface",
+      "excluded_upstream_assets": [
+        "model.safetensors"
+      ],
+      "reason": "the official SAM2 repository consumes the .pt checkpoint; a duplicate Transformers-format weight is not part of this profile",
+      "repository": "https://github.com/facebookresearch/sam2",
+      "repository_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "resolved_revision": "b7320756a13354e7530a63935656d35b2f91a290"
+    },
+    "semantic": {
+      "assets": [
+        {
+          "bytes": 5499,
+          "path": "chat_template.json"
+        },
+        {
+          "bytes": 1474,
+          "path": "config.json"
+        },
+        {
+          "bytes": 269,
+          "path": "generation_config.json"
+        },
+        {
+          "bytes": 1671839,
+          "path": "merges.txt"
+        },
+        {
+          "bytes": 4902275944,
+          "expected_sha256": "d5d0aef0eb170fc7453a296c43c0849a56f510555d3588e4fd662bb35490aefa",
+          "path": "model-00001-of-00004.safetensors"
+        },
+        {
+          "bytes": 4915962496,
+          "expected_sha256": "8be88fb5501e4d5719a6d4cc212e6a13480330e74f3e8c77daa1a68f199106b5",
+          "path": "model-00002-of-00004.safetensors"
+        },
+        {
+          "bytes": 4999831048,
+          "expected_sha256": "83de00eafe6e0d57ccd009dbcf71c9974d74df2f016c27afb7e95aafd16b2192",
+          "path": "model-00003-of-00004.safetensors"
+        },
+        {
+          "bytes": 2716270024,
+          "expected_sha256": "0a88b98e9f96270973f567e6a2c103ede6ccdf915ca3075e21c755604d0377a5",
+          "path": "model-00004-of-00004.safetensors"
+        },
+        {
+          "bytes": 67759,
+          "path": "model.safetensors.index.json"
+        },
+        {
+          "bytes": 390,
+          "path": "preprocessor_config.json"
+        },
+        {
+          "bytes": 7032403,
+          "path": "tokenizer.json"
+        },
+        {
+          "bytes": 10868,
+          "path": "tokenizer_config.json"
+        },
+        {
+          "bytes": 385,
+          "path": "video_preprocessor_config.json"
+        },
+        {
+          "bytes": 2776833,
+          "path": "vocab.json"
+        }
+      ],
+      "checkpoint_id": "Qwen/Qwen3-VL-8B-Instruct",
+      "checkpoint_provider": "huggingface",
+      "repository": null,
+      "resolved_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b"
+    }
+  },
+  "checkpoint_and_repo_cap_bytes": 32212254720,
+  "download_authorized_at_current_gate": true,
+  "known_checkpoint_bytes": 21190584269,
+  "landing_rule": "every landed file requires source URL, resolved revision, exact bytes and local SHA-256 before inference",
+  "protocol_v1_1_status": "USER_APPROVED_EFFECTIVE",
+  "remaining_bytes_before_unversioned_foundationpose_and_repositories": 11021670451,
+  "repository_archives": {
+    "object_state": {
+      "relative_path": "_repositories/FoundationPose-a1b694b83e633c2cb6115b9063d940a687759392.tar.gz",
+      "resolved_revision": "a1b694b83e633c2cb6115b9063d940a687759392",
+      "source_url": "https://github.com/NVlabs/FoundationPose/archive/a1b694b83e633c2cb6115b9063d940a687759392.tar.gz"
+    },
+    "raw_hand": {
+      "relative_path": "_repositories/HaWoR-66c7d4108d58a716deccd192cb7645170cdc7bd7.tar.gz",
+      "resolved_revision": "66c7d4108d58a716deccd192cb7645170cdc7bd7",
+      "source_url": "https://github.com/ThunderVVV/HaWoR/archive/66c7d4108d58a716deccd192cb7645170cdc7bd7.tar.gz"
+    },
+    "segmentation": {
+      "relative_path": "_repositories/sam2-2b90b9f5ceec907a1c18123530e92e794ad901a4.tar.gz",
+      "resolved_revision": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "source_url": "https://github.com/facebookresearch/sam2/archive/2b90b9f5ceec907a1c18123530e92e794ad901a4.tar.gz"
+    }
+  },
+  "schema": "quiethand.m3.checkpoint_plan.v1",
+  "source_provenance": {
+    "adapter_contract_sha256": "6b626c0b22a1b5ce1b5f8b81681c5cf9f4e73bd40e13eff7a680fdd4ddc5340c",
+    "landing_receipt_sha256": "cda13e41af86682901c837994248d87a461686672cda9e224e70f329599682bc",
+    "native_contract_sha256": "4f3d5876882cd6aa9a738f458e6b728468afab4d52ba425be13cf088eed2c4a4",
+    "native_geometry_sha256": "e8472184d4042aff96b72b775301955b9885ef57e360fbd5bc766aa43674a042",
+    "preparation_runner_sha256": "a67d6d813cc024a42128d655d8d6e96860e549db3f840935fdc7ecea2d5ab8bc",
+    "selection_sha256": "532f013f3c00a3ae48868ce99aa4304e76e9ddae164ef5864a74b798bfa423e1"
+  },
+  "status": "PLAN_ONLY_NO_BYTES_DOWNLOADED"
+}

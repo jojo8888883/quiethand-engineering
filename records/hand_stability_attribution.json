@@ -1,0 +1,164 @@
+{
+  "schema": "quiethand.m3_5.hand_object_stability_attribution.v1",
+  "status": "PASS_ENGINEERING_STABILITY_ATTRIBUTION",
+  "event_id": "qh-m3-v12-cal-594fc82381d222917ad15a7b",
+  "source_frame_indices": [
+    24,
+    33,
+    41,
+    50,
+    58,
+    67,
+    75,
+    84,
+    93,
+    101,
+    110,
+    118,
+    127,
+    135,
+    144
+  ],
+  "stable_span_threshold_m": 0.05,
+  "diagnostic_pairs_selected_from_human_correction": true,
+  "human_correction_used_to_rewrite_automatic_label": false,
+  "native_reference_usage": "post_hoc_calibration_QA_only",
+  "model_calls": 0,
+  "gpu_used": false,
+  "training_performed": false,
+  "evaluation_results_opened": false,
+  "pairs": [
+    {
+      "hand": "left",
+      "entity_id": "cad_049",
+      "native_role": "target",
+      "name_zh": "左手—木砧板",
+      "spans_m": {
+        "predicted_hand_predicted_object": 0.13118409769485587,
+        "predicted_hand_native_object": 0.13568260257384326,
+        "native_hand_predicted_object": 0.041529894051865406,
+        "native_hand_native_object": 0.03977326002792862
+      },
+      "stable": {
+        "predicted_hand_predicted_object": false,
+        "predicted_hand_native_object": false,
+        "native_hand_predicted_object": true,
+        "native_hand_native_object": true
+      },
+      "attribution": "HAND_PREDICTION_SUFFICIENT",
+      "explanation_zh": "只保留预测手、把物体换成原生轨迹，仍会越过5厘米门；手轨迹误差本身足以造成这次弃权。",
+      "hand_mean_centroid_error_m": 0.12746021215526743,
+      "hand_mean_displacement_error_m": 0.042529133579505704,
+      "hand_centroid_error_m": [
+        0.12527477844746582,
+        0.14864949934975524,
+        0.08730557960263893,
+        0.09106899348639266,
+        0.15208090414746595,
+        0.16212341817938183,
+        0.12155074432634358,
+        0.16109676955147742,
+        0.12746438101890578,
+        0.14039852648391093,
+        0.16388676917480488,
+        0.13680212638089148,
+        0.11308828250226687,
+        0.14577668353351556,
+        0.0353357261437946
+      ],
+      "worst_hand_frame": 110,
+      "worst_hand_centroid_error_m": 0.16388676917480488,
+      "object_mean_center_error_m": 0.014877547428131938,
+      "object_mean_displacement_error_m": 0.005403305073805111,
+      "contact_comparison": {
+        "predicted_hand": {
+          "state": "boundary_near",
+          "valid_frame_count": 15,
+          "close_frame_count": 5,
+          "near_frame_count": 15,
+          "longest_close_run": 1,
+          "minimum_distance_m": 0.01342995365183112,
+          "median_distance_m": 0.03906860303886233
+        },
+        "native_hand": {
+          "state": "maintained_close",
+          "valid_frame_count": 15,
+          "close_frame_count": 15,
+          "near_frame_count": 15,
+          "longest_close_run": 15,
+          "minimum_distance_m": 0.0,
+          "median_distance_m": 0.0006905339660024879
+        },
+        "surface": "same predicted entity mask plus sensor depth; native hand is post-hoc QA"
+      },
+      "qa_image": "left_cad_049_qa.jpg"
+    },
+    {
+      "hand": "right",
+      "entity_id": "cad_200",
+      "native_role": "tool",
+      "name_zh": "右手—木勺",
+      "spans_m": {
+        "predicted_hand_predicted_object": 0.08408721725339681,
+        "predicted_hand_native_object": 0.0889148926583857,
+        "native_hand_predicted_object": 0.038242489918179925,
+        "native_hand_native_object": 0.02951305696733687
+      },
+      "stable": {
+        "predicted_hand_predicted_object": false,
+        "predicted_hand_native_object": false,
+        "native_hand_predicted_object": true,
+        "native_hand_native_object": true
+      },
+      "attribution": "HAND_PREDICTION_SUFFICIENT",
+      "explanation_zh": "只保留预测手、把物体换成原生轨迹，仍会越过5厘米门；手轨迹误差本身足以造成这次弃权。",
+      "hand_mean_centroid_error_m": 0.040284845044499175,
+      "hand_mean_displacement_error_m": 0.03505005271276162,
+      "hand_centroid_error_m": [
+        0.048763070793458756,
+        0.04839792006900538,
+        0.08009135389895984,
+        0.011593207328528124,
+        0.05426419564940365,
+        0.0458553093708909,
+        0.017234024810484257,
+        0.03988276577761865,
+        0.011209242532967817,
+        0.054464442886575586,
+        0.028589009129453984,
+        0.029908448667206534,
+        0.032506244949403414,
+        0.05612318236632639,
+        0.04539025743720436
+      ],
+      "worst_hand_frame": 41,
+      "worst_hand_centroid_error_m": 0.08009135389895984,
+      "object_mean_center_error_m": 0.01256557676871011,
+      "object_mean_displacement_error_m": 0.010522394752679983,
+      "contact_comparison": {
+        "predicted_hand": {
+          "state": "maintained_close",
+          "valid_frame_count": 15,
+          "close_frame_count": 15,
+          "near_frame_count": 15,
+          "longest_close_run": 15,
+          "minimum_distance_m": 0.000244140625,
+          "median_distance_m": 0.0023417146109925386
+        },
+        "native_hand": {
+          "state": "maintained_close",
+          "valid_frame_count": 15,
+          "close_frame_count": 15,
+          "near_frame_count": 15,
+          "longest_close_run": 15,
+          "minimum_distance_m": 0.0,
+          "median_distance_m": 0.0009455525747576702
+        },
+        "surface": "same predicted entity mask plus sensor depth; native hand is post-hoc QA"
+      },
+      "qa_image": "right_cad_200_qa.jpg"
+    }
+  ],
+  "conclusion_zh": "左手—木砧板：只保留预测手、把物体换成原生轨迹，仍会越过5厘米门；手轨迹误差本身足以造成这次弃权。；右手—木勺：只保留预测手、把物体换成原生轨迹，仍会越过5厘米门；手轨迹误差本身足以造成这次弃权。",
+  "claim_boundary": "Same-event engineering root-cause attribution only; not batch hand/object accuracy, label correctness, semantic repair, or downstream utility."
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "quiethand.m3_5.evaluation_router_rule.v1",
+  "evaluation_event_count": 30,
+  "human_review_budget": 6,
+  "human_review_fraction": 0.2,
+  "training_performed": false,
+  "target_definition": {
+    "core_fields": [
+      "action",
+      "tool",
+      "target",
+      "left.role",
+      "left.contact",
+      "right.role",
+      "right.contact"
+    ],
+    "review_needed": "a substantive error or key omission in any core field prevents direct structured-label release",
+    "minor_issue": "color or wording difference that does not change the core structure"
+  },
+  "vlm_only": {
+    "sort_descending": ["semantic_uncertainty_count"],
+    "tie_break_ascending": "event_id",
+    "semantic_invalid_score": 8,
+    "null_or_empty_fields": ["action_candidate", "tool_candidate", "target_candidate"],
+    "unknown_fields": ["left.role", "left.contact", "right.role", "right.contact"],
+    "evidence_weight": {"visible": 0, "ambiguous": 1, "not_visible": 2}
+  },
+  "vlm_plus_geometry": {
+    "sort_descending": [
+      "contradicted_hand_count",
+      "semantic_uncertainty_count",
+      "missing_hand_count"
+    ],
+    "tie_break_ascending": "event_id",
+    "supported_contact_states": ["maintained_close", "boundary_near"],
+    "contradicted_contact_state": "not_close",
+    "missing_conditions": ["pair absent", "pair abstain", "claimed contact is not tool or target"]
+  },
+  "metrics": [
+    "errors_caught_at_6",
+    "error_recall_at_6",
+    "precision_at_6",
+    "false_accept_count_at_24"
+  ],
+  "evaluation_results_opened_when_frozen": false,
+  "retuning_allowed": false
+}

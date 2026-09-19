@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quiethand-engineering"
+version = "0.1.0"
+description = "Reusable engineering primitives and recorded workflows for egocentric hand-object evidence"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+cpu = ["numpy>=1.24", "Pillow>=9", "scipy>=1.10", "imageio-ffmpeg>=0.4"]
+
+[tool.setuptools.packages.find]
+include = ["quiethand*"]
+
+[tool.setuptools.package-data]
+quiethand = ["schema/*.json"]

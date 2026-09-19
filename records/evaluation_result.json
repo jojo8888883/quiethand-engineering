@@ -1,0 +1,81 @@
+{
+  "event_count": 30,
+  "human_review_budget_each": 6,
+  "methods": {
+    "vlm_only": {
+      "caught_event_ids": [
+        "qh-m3-v12-eval-3df8728c36edfd77bf151777"
+      ],
+      "error_recall_at_6": 0.25,
+      "errors_caught_at_6": 1,
+      "false_accept_count_at_24": 3,
+      "precision_at_6": 0.16666666666666666,
+      "selected_event_ids": [
+        "qh-m3-v12-eval-0679c533a7089c933cf6d130",
+        "qh-m3-v12-eval-0763053e27a92200f6daecbb",
+        "qh-m3-v12-eval-2372e179450fca6ecf213e12",
+        "qh-m3-v12-eval-27b13b294921177a215a6b22",
+        "qh-m3-v12-eval-3053bcfd8703a12bed63fbb1",
+        "qh-m3-v12-eval-3df8728c36edfd77bf151777"
+      ]
+    },
+    "vlm_plus_geometry": {
+      "caught_event_ids": [
+        "qh-m3-v12-eval-3df8728c36edfd77bf151777",
+        "qh-m3-v12-eval-53b3bf5236f59db582621b9e"
+      ],
+      "error_recall_at_6": 0.5,
+      "errors_caught_at_6": 2,
+      "false_accept_count_at_24": 2,
+      "precision_at_6": 0.3333333333333333,
+      "selected_event_ids": [
+        "qh-m3-v12-eval-2372e179450fca6ecf213e12",
+        "qh-m3-v12-eval-3df8728c36edfd77bf151777",
+        "qh-m3-v12-eval-53b3bf5236f59db582621b9e",
+        "qh-m3-v12-eval-6f3a81168cf9690e0f1f1ac5",
+        "qh-m3-v12-eval-9f21eac3f91e9c42b1cbfcac",
+        "qh-m3-v12-eval-dbb9f728c979b380b0eba073"
+      ]
+    }
+  },
+  "plain_chinese_conclusion": "这 30 条支持：在同样只复核 6 条的预算下，加入既有手物几何比只看 VLM 不确定性抓到了更多核心标注错误。",
+  "retuning_performed": false,
+  "schema": "quiethand.m3_5.evaluation_router_result.v1",
+  "scope": "this frozen 30-event evaluation only",
+  "status": "COMPLETE",
+  "target_map": {
+    "qh-m3-v12-eval-0679c533a7089c933cf6d130": false,
+    "qh-m3-v12-eval-0763053e27a92200f6daecbb": false,
+    "qh-m3-v12-eval-2372e179450fca6ecf213e12": false,
+    "qh-m3-v12-eval-27b13b294921177a215a6b22": false,
+    "qh-m3-v12-eval-3053bcfd8703a12bed63fbb1": false,
+    "qh-m3-v12-eval-3df8728c36edfd77bf151777": true,
+    "qh-m3-v12-eval-3fc3bb65693bfe9d8e82fe7f": false,
+    "qh-m3-v12-eval-41a8399e6df9ba6a207ae32e": false,
+    "qh-m3-v12-eval-4dd0801694a0ce8f9e67c81b": false,
+    "qh-m3-v12-eval-53b3bf5236f59db582621b9e": true,
+    "qh-m3-v12-eval-554ddf8d97485c41b440fef5": false,
+    "qh-m3-v12-eval-5aea5e5313d2e7b0ac8a8a0b": false,
+    "qh-m3-v12-eval-6632638efd23400840e17a12": false,
+    "qh-m3-v12-eval-6f3a81168cf9690e0f1f1ac5": false,
+    "qh-m3-v12-eval-903597ed19c1d3a37c65c56c": false,
+    "qh-m3-v12-eval-915e7bbe3cea657cb3554584": false,
+    "qh-m3-v12-eval-9f21eac3f91e9c42b1cbfcac": false,
+    "qh-m3-v12-eval-a04198263d12ddea81f6bcbc": true,
+    "qh-m3-v12-eval-aa03b1b3b7772f0fbabefe33": false,
+    "qh-m3-v12-eval-aa2b7cdd175cb2ac7e345bdd": false,
+    "qh-m3-v12-eval-b1b92756e58eececbc11376f": false,
+    "qh-m3-v12-eval-b59749e1e230e846d891ef5f": false,
+    "qh-m3-v12-eval-ce3105ae9546537abe9d8191": false,
+    "qh-m3-v12-eval-d1de4189d7799120c80cbeae": false,
+    "qh-m3-v12-eval-dbb9f728c979b380b0eba073": false,
+    "qh-m3-v12-eval-e6ae7986e1f07dff32d217a2": false,
+    "qh-m3-v12-eval-ee11986fa90c98b66948bdf4": false,
+    "qh-m3-v12-eval-eec9413bd33ed30466132834": true,
+    "qh-m3-v12-eval-f8ec68864bbc0a26f7b5be51": false,
+    "qh-m3-v12-eval-f9a2f4863902428d696e38b7": false
+  },
+  "total_core_errors": 4,
+  "training_performed": false,
+  "verdict": "SUPPORTS_GEOMETRY_GAIN_ON_THIS_30"
+}

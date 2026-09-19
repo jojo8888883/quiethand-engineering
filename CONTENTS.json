@@ -1,0 +1,555 @@
+{
+  "kind": "local_engineering_source_bundle",
+  "raw_data_and_weights_included": false,
+  "gpu_inference_reproduced_during_packaging": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "source": "deliverables/quiethand-engineering/.gitignore"
+    },
+    {
+      "path": "README.md",
+      "source": "deliverables/quiethand-engineering/README.md"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "source": "deliverables/quiethand-engineering/THIRD_PARTY.md"
+    },
+    {
+      "path": "docs/MODULES.md",
+      "source": "deliverables/quiethand-engineering/docs/MODULES.md"
+    },
+    {
+      "path": "docs/RELATED_WORK.md",
+      "source": "deliverables/quiethand-engineering/docs/RELATED_WORK.md"
+    },
+    {
+      "path": "docs/RESULTS_AND_LESSONS.md",
+      "source": "deliverables/quiethand-engineering/docs/RESULTS_AND_LESSONS.md"
+    },
+    {
+      "path": "docs/REUSE.md",
+      "source": "deliverables/quiethand-engineering/docs/REUSE.md"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "source": "deliverables/quiethand-engineering/docs/VALIDATION.md"
+    },
+    {
+      "path": "examples/reuse_demo.py",
+      "source": "deliverables/quiethand-engineering/examples/reuse_demo.py"
+    },
+    {
+      "path": "pyproject.toml",
+      "source": "deliverables/quiethand-engineering/pyproject.toml"
+    },
+    {
+      "path": "quiethand/__init__.py",
+      "source": "quiethand/__init__.py"
+    },
+    {
+      "path": "quiethand/arctic_archive_binding.py",
+      "source": "quiethand/arctic_archive_binding.py"
+    },
+    {
+      "path": "quiethand/arctic_contract.py",
+      "source": "quiethand/arctic_contract.py"
+    },
+    {
+      "path": "quiethand/arctic_native_validation.py",
+      "source": "quiethand/arctic_native_validation.py"
+    },
+    {
+      "path": "quiethand/compiler.py",
+      "source": "quiethand/compiler.py"
+    },
+    {
+      "path": "quiethand/geometry.py",
+      "source": "quiethand/geometry.py"
+    },
+    {
+      "path": "quiethand/http_range_zip.py",
+      "source": "quiethand/http_range_zip.py"
+    },
+    {
+      "path": "quiethand/linalg.py",
+      "source": "quiethand/linalg.py"
+    },
+    {
+      "path": "quiethand/m2_terminal_contract.py",
+      "source": "quiethand/m2_terminal_contract.py"
+    },
+    {
+      "path": "quiethand/m3_adapter_contract.py",
+      "source": "quiethand/m3_adapter_contract.py"
+    },
+    {
+      "path": "quiethand/m3_materialization.py",
+      "source": "quiethand/m3_materialization.py"
+    },
+    {
+      "path": "quiethand/m3_v1_2_contract.py",
+      "source": "quiethand/m3_v1_2_contract.py"
+    },
+    {
+      "path": "quiethand/models.py",
+      "source": "quiethand/models.py"
+    },
+    {
+      "path": "quiethand/object_identity.py",
+      "source": "quiethand/object_identity.py"
+    },
+    {
+      "path": "quiethand/outer.py",
+      "source": "quiethand/outer.py"
+    },
+    {
+      "path": "quiethand/safe_torch_pickle.py",
+      "source": "quiethand/safe_torch_pickle.py"
+    },
+    {
+      "path": "quiethand/schema/evidence_event.schema.json",
+      "source": "quiethand/schema/evidence_event.schema.json"
+    },
+    {
+      "path": "quiethand/taco_contract.py",
+      "source": "quiethand/taco_contract.py"
+    },
+    {
+      "path": "quiethand/taco_landing.py",
+      "source": "quiethand/taco_landing.py"
+    },
+    {
+      "path": "quiethand/taco_native.py",
+      "source": "quiethand/taco_native.py"
+    },
+    {
+      "path": "quiethand/taco_source.py",
+      "source": "quiethand/taco_source.py"
+    },
+    {
+      "path": "quiethand/verified_interval.py",
+      "source": "quiethand/verified_interval.py"
+    },
+    {
+      "path": "records/checkpoint_plan.json",
+      "source": "artifacts/quiethand/m3/QH_M3_CHECKPOINT_PLAN.json"
+    },
+    {
+      "path": "records/entity_semantic_binding_result.md",
+      "source": "artifacts/quiethand/m3_5/entity_semantic_binding/RESULT.md"
+    },
+    {
+      "path": "records/evaluation_claims.md",
+      "source": "artifacts/quiethand/m3_5/evaluation_router_blind/CLAIMS_FROM_RESULTS.md"
+    },
+    {
+      "path": "records/evaluation_result.json",
+      "source": "artifacts/quiethand/m3_5/evaluation_router_blind/final_result/result.json"
+    },
+    {
+      "path": "records/evaluation_router_rule.json",
+      "source": "artifacts/quiethand/m3_5/evaluation_router_blind/router_rule.json"
+    },
+    {
+      "path": "records/hand_stability_attribution.json",
+      "source": "artifacts/quiethand/m3_5/entity_region_repair/hand_stability_attribution/result.json"
+    },
+    {
+      "path": "scripts/quiethand/build_downstream_sample.py",
+      "source": "scripts/quiethand/build_downstream_sample.py"
+    },
+    {
+      "path": "scripts/quiethand/build_m3_result_preview.py",
+      "source": "scripts/quiethand/build_m3_result_preview.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/audit_metric_alignment.py",
+      "source": "scripts/quiethand/m3_5_fusion/audit_metric_alignment.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_annotation_router_contract.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_annotation_router_contract.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_fusion_preview.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_fusion_preview.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_identity_batch_preview.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_identity_batch_preview.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_role_correction_calibration.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_role_correction_calibration.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_role_swap_symmetry.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_role_swap_symmetry.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/build_spoon_entity_record.py",
+      "source": "scripts/quiethand/m3_5_fusion/build_spoon_entity_record.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/diagnose_hand_object_stability.py",
+      "source": "scripts/quiethand/m3_5_fusion/diagnose_hand_object_stability.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/diagnose_identity_batch.py",
+      "source": "scripts/quiethand/m3_5_fusion/diagnose_identity_batch.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/diagnose_trajectories.py",
+      "source": "scripts/quiethand/m3_5_fusion/diagnose_trajectories.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/entity_semantic_binding.py",
+      "source": "scripts/quiethand/m3_5_fusion/entity_semantic_binding.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/evaluate_hand_rgbd_repair.py",
+      "source": "scripts/quiethand/m3_5_fusion/evaluate_hand_rgbd_repair.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/finish_identity_batch.py",
+      "source": "scripts/quiethand/m3_5_fusion/finish_identity_batch.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/identity_batch_preview.html",
+      "source": "scripts/quiethand/m3_5_fusion/identity_batch_preview.html"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/mask_depth_se3_icp.py",
+      "source": "scripts/quiethand/m3_5_fusion/mask_depth_se3_icp.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/mask_depth_translation.py",
+      "source": "scripts/quiethand/m3_5_fusion/mask_depth_translation.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/mask_pose_consistency.py",
+      "source": "scripts/quiethand/m3_5_fusion/mask_pose_consistency.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/prepare_entity_region_repair.py",
+      "source": "scripts/quiethand/m3_5_fusion/prepare_entity_region_repair.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/prepare_metric_hand_input.py",
+      "source": "scripts/quiethand/m3_5_fusion/prepare_metric_hand_input.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/preview_entity_region_repair.py",
+      "source": "scripts/quiethand/m3_5_fusion/preview_entity_region_repair.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/preview_identity_repair.py",
+      "source": "scripts/quiethand/m3_5_fusion/preview_identity_repair.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_foundation_refinement.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_foundation_refinement.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_mask_aware_tracking.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_mask_aware_tracking.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_per_frame_registration.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_per_frame_registration.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_registration.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_registration.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_rgbd_depth.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_rgbd_depth.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/qa_spoon_rgbd_se3.py",
+      "source": "scripts/quiethand/m3_5_fusion/qa_spoon_rgbd_se3.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/refine_spoon_rgbd_depth.py",
+      "source": "scripts/quiethand/m3_5_fusion/refine_spoon_rgbd_depth.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/refine_spoon_rgbd_se3.py",
+      "source": "scripts/quiethand/m3_5_fusion/refine_spoon_rgbd_se3.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/repair_entity_regions.py",
+      "source": "scripts/quiethand/m3_5_fusion/repair_entity_regions.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/repair_hand_rgbd.py",
+      "source": "scripts/quiethand/m3_5_fusion/repair_hand_rgbd.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/repair_object_identity.py",
+      "source": "scripts/quiethand/m3_5_fusion/repair_object_identity.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/rerun_spoon_foundation_refinement.py",
+      "source": "scripts/quiethand/m3_5_fusion/rerun_spoon_foundation_refinement.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/rerun_spoon_mask_aware_tracking.py",
+      "source": "scripts/quiethand/m3_5_fusion/rerun_spoon_mask_aware_tracking.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/rerun_spoon_per_frame_registration.py",
+      "source": "scripts/quiethand/m3_5_fusion/rerun_spoon_per_frame_registration.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/rerun_spoon_registration.py",
+      "source": "scripts/quiethand/m3_5_fusion/rerun_spoon_registration.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/run_raw_hand_metric.py",
+      "source": "scripts/quiethand/m3_5_fusion/run_raw_hand_metric.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_5_fusion/verify_metric_hand_results.py",
+      "source": "scripts/quiethand/m3_5_fusion/verify_metric_hand_results.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/build_blind_target_review.py",
+      "source": "scripts/quiethand/m3_eval_router/build_blind_target_review.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/build_evaluation_fusion.py",
+      "source": "scripts/quiethand/m3_eval_router/build_evaluation_fusion.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/materialize_geometry.py",
+      "source": "scripts/quiethand/m3_eval_router/materialize_geometry.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/materialize_temporal.py",
+      "source": "scripts/quiethand/m3_eval_router/materialize_temporal.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/prepare_identity_input.py",
+      "source": "scripts/quiethand/m3_eval_router/prepare_identity_input.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/prepare_parallel_jobs.py",
+      "source": "scripts/quiethand/m3_eval_router/prepare_parallel_jobs.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/prepare_perception_job.py",
+      "source": "scripts/quiethand/m3_eval_router/prepare_perception_job.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/prepare_semantic_job.py",
+      "source": "scripts/quiethand/m3_eval_router/prepare_semantic_job.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/run_identity_binding.py",
+      "source": "scripts/quiethand/m3_eval_router/run_identity_binding.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/run_temporal_semantic.py",
+      "source": "scripts/quiethand/m3_eval_router/run_temporal_semantic.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/score_evaluation.py",
+      "source": "scripts/quiethand/m3_eval_router/score_evaluation.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_eval_router/seal_rankings.py",
+      "source": "scripts/quiethand/m3_eval_router/seal_rankings.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_jobs/run_raw_hand.py",
+      "source": "scripts/quiethand/m3_jobs/run_raw_hand.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_jobs/run_segmentation_object.py",
+      "source": "scripts/quiethand/m3_jobs/run_segmentation_object.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_jobs/run_semantic.py",
+      "source": "scripts/quiethand/m3_jobs/run_semantic.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_jobs/runtime_common.py",
+      "source": "scripts/quiethand/m3_jobs/runtime_common.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_raw_runtime_constraints.txt",
+      "source": "scripts/quiethand/m3_raw_runtime_constraints.txt"
+    },
+    {
+      "path": "scripts/quiethand/m3_raw_runtime_requirements.txt",
+      "source": "scripts/quiethand/m3_raw_runtime_requirements.txt"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/audit_results.py",
+      "source": "scripts/quiethand/m3_v1_2/audit_results.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/build_correction_review.py",
+      "source": "scripts/quiethand/m3_v1_2/build_correction_review.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/build_result_preview.py",
+      "source": "scripts/quiethand/m3_v1_2/build_result_preview.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/materialize_geometry.py",
+      "source": "scripts/quiethand/m3_v1_2/materialize_geometry.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/materialize_temporal.py",
+      "source": "scripts/quiethand/m3_v1_2/materialize_temporal.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/prepare_geometry_jobs.py",
+      "source": "scripts/quiethand/m3_v1_2/prepare_geometry_jobs.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/prepare_semantic_job.py",
+      "source": "scripts/quiethand/m3_v1_2/prepare_semantic_job.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/review.js",
+      "source": "scripts/quiethand/m3_v1_2/review.js"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/run_perception.py",
+      "source": "scripts/quiethand/m3_v1_2/run_perception.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/run_raw_hand.py",
+      "source": "scripts/quiethand/m3_v1_2/run_raw_hand.py"
+    },
+    {
+      "path": "scripts/quiethand/m3_v1_2/run_temporal_semantic.py",
+      "source": "scripts/quiethand/m3_v1_2/run_temporal_semantic.py"
+    },
+    {
+      "path": "scripts/quiethand/prepare_m3_a800_jobs.py",
+      "source": "scripts/quiethand/prepare_m3_a800_jobs.py"
+    },
+    {
+      "path": "scripts/quiethand/result_preview_review.js",
+      "source": "scripts/quiethand/result_preview_review.js"
+    },
+    {
+      "path": "scripts/quiethand/run_m0_analytic.py",
+      "source": "scripts/quiethand/run_m0_analytic.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m1_verified.py",
+      "source": "scripts/quiethand/run_m1_verified.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m2_authorized_download.py",
+      "source": "scripts/quiethand/run_m2_authorized_download.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m2_native_validation.py",
+      "source": "scripts/quiethand/run_m2_native_validation.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m2_preflight.py",
+      "source": "scripts/quiethand/run_m2_preflight.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m2_smplx_oracle.py",
+      "source": "scripts/quiethand/run_m2_smplx_oracle.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_adapter_calibration_audit.py",
+      "source": "scripts/quiethand/run_m3_adapter_calibration_audit.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_adapter_input_freeze.py",
+      "source": "scripts/quiethand/run_m3_adapter_input_freeze.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_calibration_materialize.py",
+      "source": "scripts/quiethand/run_m3_calibration_materialize.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_calibration_prepare.py",
+      "source": "scripts/quiethand/run_m3_calibration_prepare.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_checkpoint_landing.py",
+      "source": "scripts/quiethand/run_m3_checkpoint_landing.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_human_audit_compile.py",
+      "source": "scripts/quiethand/run_m3_human_audit_compile.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_human_audit_package.py",
+      "source": "scripts/quiethand/run_m3_human_audit_package.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_repository_binding.py",
+      "source": "scripts/quiethand/run_m3_repository_binding.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_taco_landing.py",
+      "source": "scripts/quiethand/run_m3_taco_landing.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_taco_native.py",
+      "source": "scripts/quiethand/run_m3_taco_native.py"
+    },
+    {
+      "path": "scripts/quiethand/run_m3_taco_probe.py",
+      "source": "scripts/quiethand/run_m3_taco_probe.py"
+    },
+    {
+      "path": "scripts/quiethand/serve_review.py",
+      "source": "scripts/quiethand/serve_review.py"
+    },
+    {
+      "path": "scripts/quiethand/setup_m3_remote_envs.sh",
+      "source": "scripts/quiethand/setup_m3_remote_envs.sh"
+    },
+    {
+      "path": "tests/test_quiethand_m0.py",
+      "source": "tests/test_quiethand_m0.py"
+    },
+    {
+      "path": "tests/test_quiethand_m1.py",
+      "source": "tests/test_quiethand_m1.py"
+    },
+    {
+      "path": "tests/test_quiethand_m3_5_fusion.py",
+      "source": "tests/test_quiethand_m3_5_fusion.py"
+    },
+    {
+      "path": "tests/test_quiethand_mask_depth_se3_icp.py",
+      "source": "tests/test_quiethand_mask_depth_se3_icp.py"
+    },
+    {
+      "path": "tests/test_quiethand_mask_depth_translation.py",
+      "source": "tests/test_quiethand_mask_depth_translation.py"
+    },
+    {
+      "path": "tests/test_quiethand_mask_pose_consistency.py",
+      "source": "tests/test_quiethand_mask_pose_consistency.py"
+    },
+    {
+      "path": "tests/test_quiethand_object_identity.py",
+      "source": "tests/test_quiethand_object_identity.py"
+    },
+    {
+      "path": "tests/test_quiethand_trajectory_diagnosis.py",
+      "source": "tests/test_quiethand_trajectory_diagnosis.py"
+    },
+    {
+      "path": "tests/test_reuse_demo.py",
+      "source": "deliverables/quiethand-engineering/tests/test_reuse_demo.py"
+    }
+  ]
+}

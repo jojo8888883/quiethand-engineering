@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quiethand.local/schema/evidence_event.v1.json",
+  "title": "QuietHand EvidenceEvent v1",
+  "$comment": "JSON Schema covers structural validation. EvidenceEvent.from_json is the canonical validator and additionally enforces end>start, distinct definite hand roles, unique evidence keys, closed acyclic dependencies, duplicate-object-key rejection, and recursive finite/non-null available values.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "dataset",
+    "sequence_id",
+    "interval_s",
+    "roles",
+    "supported_object_id",
+    "support_frame_id",
+    "evidence"
+  ],
+  "properties": {
+    "schema_version": {"const": "qh.evidence_event.v1"},
+    "event_id": {"type": "string", "minLength": 1},
+    "dataset": {"type": "string", "minLength": 1},
+    "sequence_id": {"type": "string", "minLength": 1},
+    "interval_s": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {"start": {"type": "number"}, "end": {"type": "number"}}
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["active_hand", "support_hand"],
+      "properties": {
+        "active_hand": {"enum": ["left", "right", "ambiguous"]},
+        "support_hand": {"enum": ["left", "right", "ambiguous"]}
+      }
+    },
+    "supported_object_id": {"type": "string", "minLength": 1},
+    "support_frame_id": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/evidenceRecord"}
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_kind", "source_name", "source_version", "run_id"],
+      "properties": {
+        "source_kind": {"enum": ["oracle", "model", "human", "infill", "derived"]},
+        "source_name": {"type": "string", "pattern": ".*\\S.*"},
+        "source_version": {"type": "string", "pattern": ".*\\S.*"},
+        "run_id": {"type": "string", "pattern": ".*\\S.*"}
+      }
+    },
+    "evidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "status",
+        "value",
+        "unit",
+        "frame_id",
+        "timestamp_s",
+        "provenance",
+        "depends_on",
+        "failure_reason",
+        "error_set_ref"
+      ],
+      "properties": {
+        "key": {"type": "string", "minLength": 1},
+        "status": {"enum": ["observed", "inferred", "human", "derived", "missing", "unobservable", "ambiguous", "invalid"]},
+        "value": {},
+        "unit": {"type": "string"},
+        "frame_id": {"type": "string"},
+        "timestamp_s": {"type": "number"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "depends_on": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "failure_reason": {"type": ["string", "null"]},
+        "error_set_ref": {"type": ["string", "null"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"enum": ["observed", "inferred", "human", "derived"]}}},
+          "then": {"properties": {"value": {"not": {"type": "null"}}, "failure_reason": {"type": "null"}}}
+        },
+        {
+          "if": {"properties": {"status": {"enum": ["missing", "unobservable", "ambiguous", "invalid"]}}},
+          "then": {"properties": {"value": {"type": "null"}, "failure_reason": {"type": "string", "minLength": 1}}}
+        }
+      ]
+    }
+  }
+}
