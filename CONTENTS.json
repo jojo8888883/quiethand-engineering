@@ -1,5 +1,6 @@
 {
-  "kind": "local_engineering_source_bundle",
+  "kind": "initial_source_provenance",
+  "description": "2026-09-19 首次整理时的文件来源索引，不是当前版本的文件清单；当前文件以 Git 跟踪内容为准。",
   "raw_data_and_weights_included": false,
   "gpu_inference_reproduced_during_packaging": false,
   "files": [

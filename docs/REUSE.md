@@ -1,93 +1,49 @@
 # 运行与复用说明
 
-## 1. 最短路径：先跑纯 CPU 接口示例
+QuietHand 的公开仓库是 [jojo8888883/quiethand-engineering](https://github.com/jojo8888883/quiethand-engineering)，项目与视频说明见 [项目页面](https://quiethand-brief-yuzhou.scut-lang.chatgpt.site/)。本仓库可直接复用的是核心 Python API、CPU 几何/契约检查和本地预览服务；历史模型 runner 与冻结实验配方仅供查阅，不是开箱即用的 GPU 全链路。
 
-解压 `quiethand-engineering.zip`，终端进入解压后的 `quiethand-engineering/`，执行：
+## 最短可运行路径
 
-```bash
-python3 examples/reuse_demo.py
-python3 -m unittest discover -s tests -p 'test_reuse_demo.py' -v
-python3 -m unittest discover -s tests -p 'test_quiethand_m[01].py' -v
-```
-
-Python >= 3.10。以上不需要安装依赖，也不会调用模型或写入旧结果。示例的 JSON 打印到终端。
-
-从其他项目 import 核心包：
+在任意新目录克隆仓库。需要 Python 3.10 或更高版本：
 
 ```bash
+git clone https://github.com/jojo8888883/quiethand-engineering.git
+cd quiethand-engineering
 python3 -m venv .venv
-.venv/bin/python -m pip install -e .
-```
-
-`pyproject.toml` 仅负责核心 Python 包。可选的 CPU 数值/图像模块和随包测试：
-
-```bash
+.venv/bin/python -m pip install --upgrade pip
 .venv/bin/python -m pip install -e '.[cpu]'
 .venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python examples/reuse_demo.py
 ```
 
-这不是 GPU 环境安装命令；没有把 CUDA、FoundationPose 和 HaWoR 强行塞进一个通用 requirements。
+`examples/reuse_demo.py` 是已知的 synthetic 接口示例：它演示物体身份绑定、证据记录和接触约束计算，不读取视频、不下载资源，也不代表模型或实验结果。`cpu` 额外依赖只覆盖 NumPy、Pillow、SciPy 与 imageio-ffmpeg；这不是 CUDA 或模型环境安装命令。
 
-## 2. 用自己的物体身份输入
+可在其他项目中直接导入核心包：
 
 ```python
 from quiethand.object_identity import parse_visual_binding, resolve_role_entity
-
-event = {
-    'event_id': 'your-event',
-    'object_state': {'entities': [
-        {'entity_id': 'bowl', 'mesh_path': 'meshes/bowl.obj'},
-        {'entity_id': 'plate', 'mesh_path': 'meshes/plate.obj'},
-    ]},
-}
-raw = '''{
-  "region_0": {"entity_id": "bowl", "reason": "区域内是深碗"},
-  "region_1": {"entity_id": "plate", "reason": "区域内是浅盘"}
-}'''
-binding = parse_visual_binding(raw, event)
-mesh_entry = resolve_role_entity(event, binding, 'tool')
-print(mesh_entry)
+from quiethand.models import EvidenceRecord
 ```
 
-这里的 JSON 是调用者提供的已获得回答；这段代码本身不识别图像、不生成 CAD，也不判断主动/支撑。两个区域当前要求指向不同实体，未知可填 `null`。
+接口与文件用途见[模块地图](MODULES.md)。
 
-## 3. 接回实际感知流水线
+## 接入真实感知输入时的边界
 
-先准备的输入：RGB、与 RGB 对应的传感器深度、内参、物体 CAD，以及每个事件的源帧索引。现有协议中几何常用完整动作里的 15 个采样帧；稀疏帧不能直接当高频控制轨迹。
+历史感知路线需要逐事件准备：时序 RGB、与 RGB 对齐的传感器深度、相机内参 `K`、物体 CAD、完整动作区间和源帧索引。完整动作的几何处理曾使用 15 个采样帧；稀疏帧不能直接当作高频控制轨迹。
 
-顺序：
+典型顺序是：先由完整视频确定动作区间和语义；按同一源帧索引准备 RGB-D、`K` 与 CAD；再运行手和物体估计、确认尺度与坐标系一致，最后生成带缺项/冲突状态的结构化记录。核心绑定 API 只解析调用者已经获得的区域—实体 JSON；它不识别图像、不生成 CAD，也不推断主动或支撑角色。
 
-1. 用完整视频确定动作区间与语义。
-2. 按同一组源帧索引准备 RGB-D 与相机参数。
-3. 生成物体区域并显式绑定物体身份。
-4. 跑手与物体位姿，先确认尺度/坐标一致，再计算相对关系。
-5. 输出原始观察、冲突和缺项；用预览查看，不把推断伪装成真值。
+[`scripts/quiethand/m3_v1_2/`](../scripts/quiethand/m3_v1_2/) 和 [`scripts/quiethand/m3_5_fusion/`](../scripts/quiethand/m3_5_fusion/) 中保留了 Qwen、HaWoR、SAM2、FoundationPose 等历史 runner、任务准备脚本与冻结实验配方。它们仍要求各自的模型、数据、运行环境与输入目录；这些资源未随仓库提供。本仓库没有提供通用 GPU 安装器，也未声明任意机器可复现完整 GPU 流水线。
 
-实际入口见 `docs/MODULES.md`；历史模型版本见 `records/checkpoint_plan.json`。模型 runner 的参数由相邻 `prepare_*job*.py` 生成。运行时还需要原输入清单、绑定记录和资源目录，这些不是凭空用一个空 JSON 就能替代的。
+模型、数据集和部分人体模型还受各自的获取条件约束，不能因克隆本仓库而获得。具体归属见[第三方资产说明](../THIRD_PARTY.md)。
 
-原脚本里的服务器路径和实验 ID 是历史运行配方的一部分。迁入新项目时，为那个项目提供明确输入、模型目录和输出路径；不要照抄排卡命令或直接重放已完成实验。本包没有宣称 GPU 全链路可以离开原资源立即复现。
+## 本地查看已有预览
 
-## 4. 看旧网页
-
-包里有网页生成器，但没有旧视频和点云。要看原结果，应在原工作区或已有本地预览站点启动视频服务：
+[`scripts/quiethand/serve_review.py`](../scripts/quiethand/serve_review.py) 是参数化的本地 HTTP 服务，支持视频 byte-range 请求。将 `--directory` 指向你已有的 HTML 与媒体目录：
 
 ```bash
-python3 scripts/quiethand/serve_review.py --bind 127.0.0.1 --port 8768 --directory .
+.venv/bin/python scripts/quiethand/serve_review.py \
+  --bind 127.0.0.1 --port 8768 --directory path/to/review-artifacts
 ```
 
-选择保留媒体的目录作为 `--directory`，否则 HTML 能打开但视频仍会 404。不要把“网页存在”当成“媒体也在包里”。
-
-## 5. 硬件与环境边界
-
-- 本包接口例子：普通 CPU，macOS/Linux 可用，无 GPU。
-- 随包几何模块与测试：CPU + NumPy/Pillow/SciPy/imageio-ffmpeg，已列在 `cpu` 可选依赖中；其他历史入口按实际需求配置。
-- 历史模型全链路：分离的 Qwen、HaWoR、SAM2/FoundationPose 环境，原来在共享 A800 上执行；本轮未测最低显存，也未新建环境。
-- 数据/模型需按各自官方来源获取。ARCTIC、MANO 等访问许可不能从本包继承。
-
-## 6. 原工作区重新导出
-
-```bash
-python3 scripts/quiethand/export_engineering_bundle.py
-```
-
-输出 `deliverables/quiethand-engineering.zip`。导出器只读取指定源码、本文档目录和选定记录，不访问服务器、不调用模型，不复制原始数据或用户评语。`CONTENTS.json` 可用于查一个文件来自哪里。
+它不会生成历史视频、点云或实验输出；目录中缺失的媒体仍会返回 404。
